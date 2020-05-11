@@ -9,9 +9,13 @@ import javax.enterprise.inject.Alternative;
 import com.yrgo.domain.Elever;
 
 
+/**
+ * 
+ * @author Danijela
+ *
+ */
 @Stateless
 @Alternative
-
 public class EleverDataAccessTestingVersion implements EleverDataAccess {
 
 	@Override
@@ -19,6 +23,11 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 		
 	}
 
+	/**
+	 * 
+	 * @author Danijela
+	 *
+	 */
 	@Override
 	public List<Elever> findAll() {
 		

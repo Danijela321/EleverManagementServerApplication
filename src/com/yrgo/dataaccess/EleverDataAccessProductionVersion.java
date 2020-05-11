@@ -8,9 +8,14 @@ import javax.enterprise.inject.Default;
 
 import com.yrgo.domain.Elever;
 
+
+/**
+ * 
+ * @author Danijela
+ *
+ */
 @Stateless
 @Default
-
 public class EleverDataAccessProductionVersion implements EleverDataAccess {
 
 	@Override
@@ -19,6 +24,11 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 
 	}
 
+	/**
+	 * 
+	 * @author Danijela
+	 *
+	 */
 	@Override
 	public List<Elever> findAll() {
 		Elever el1 = new Elever ("Anna","Borg","ITH",2);
