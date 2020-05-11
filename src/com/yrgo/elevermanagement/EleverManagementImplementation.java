@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
+import com.yrgo.dataaccess.EleverDataAccess;
 import com.yrgo.domain.Elever;
 
 /**
@@ -15,9 +17,12 @@ import com.yrgo.domain.Elever;
 @Stateless
 public class EleverManagementImplementation implements EleverManagementService {
 
+	@Inject
+	private EleverDataAccess dao;
+	
 	@Override
 	public void registerElever(Elever elever) {
-		
+		dao.insert(elever);
 
 	}
 
@@ -26,13 +31,15 @@ public class EleverManagementImplementation implements EleverManagementService {
 	 */
 	@Override
 	public List<Elever> getAllElever() {
+		return dao.findAll();
 		
-		Elever el1 = new Elever("Jan","Jansson","Yrgo",1);
+		/*Elever el1 = new Elever("Jan","Jansson","Yrgo",1);
 		Elever el2 = new Elever("Sara","Blomqvist","ITH",2);
 		List<Elever> elever = new ArrayList<Elever>();
 		elever.add(el1);
 		elever.add(el2);
 		return elever;
+		*/
 		
 	}
 	
@@ -42,7 +49,7 @@ public class EleverManagementImplementation implements EleverManagementService {
 	@Override
 	public List<Elever> searchBysurname(String surname) {
 		
-		return null;
+		return dao.findBySurname(surname);
 	}
 
 }

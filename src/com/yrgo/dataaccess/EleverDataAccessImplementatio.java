@@ -21,9 +21,13 @@ public class EleverDataAccessImplementatio implements EleverDataAccess {
 		
 		Elever el1 = new Elever("Jan","Jansson","Yrgo",1);
 		Elever el2 = new Elever("Sara","Blomqvist","ITH",2);
+		Elever el3= new Elever("Adam","Andersson","Teknikhogskolan",1);
+		Elever el4=new Elever("Maria", "Marisson","Yrgo",2);
 		List<Elever> elever = new ArrayList<Elever>();
 		elever.add(el1);
 		elever.add(el2);
+		elever.add(el3);
+		elever.add(el4);
 		return elever;
 	}
 
