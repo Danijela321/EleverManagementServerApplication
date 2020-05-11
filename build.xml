@@ -1,4 +1,6 @@
 <project name="JavaEE Wildfly Server Build" default="BuildAll">
+	
+	<!--Danijela-->
     			
     <property name="bin" value="./bin"/>
     <property name="lib" value="./lib"/>
@@ -70,8 +72,14 @@
 		<target name="serverjar" depends="compile" 
 		                         description="Build Server Jar files.">
 		   
-		   <jar destfile="${server-jarfile}" basedir="${bin}" />
-		   <echo message="Built the server jar file."/>   		  
+		 <!--  <jar destfile="${server-jarfile}" basedir="${bin}" />
+		   <echo message="Built the server jar file."/>   
+		   -->
+			 <jar destfile="${server-jarfile}" basedir="${bin}" >
+			      <metainf dir="${src}/META-INF">
+				  <include name="beans.xml" />
+			     </metainf>
+			</jar>
 		</target>
 		
 		<target name="clientjar" depends="compile" 
