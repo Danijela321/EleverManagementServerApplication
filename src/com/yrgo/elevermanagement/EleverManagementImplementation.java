@@ -1,4 +1,4 @@
-package com.yrgo.employeemanagemen;
+package com.yrgo.elevermanagement;
 
 import java.util.ArrayList;
 
@@ -27,8 +27,8 @@ public class EleverManagementImplementation implements EleverManagementService {
 	@Override
 	public List<Elever> getAllElever() {
 		
-		Elever el1 = new Elever("James","Green","Writer",3700);
-		Elever el2 = new Elever("Sara","Bild","Editor",2200);
+		Elever el1 = new Elever("Jan","Jansson","Yrgo",1);
+		Elever el2 = new Elever("Sara","Blomqvist","ITH",2);
 		List<Elever> elever = new ArrayList<Elever>();
 		elever.add(el1);
 		elever.add(el2);

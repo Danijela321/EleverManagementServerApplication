@@ -1,14 +1,17 @@
-package com.yrgo.employeemanagemen;
+package com.yrgo.elevermanagement;
 
 import java.util.List;
-/**
- * @author Danijela
- */
+
 
 import javax.ejb.Remote;
 
 import com.yrgo.domain.Elever;
 
+/**
+ * 
+ * @author Danijela
+ *
+ */
 @Remote
 public interface EleverManagementService {
 	
