@@ -78,6 +78,7 @@
 			 <jar destfile="${server-jarfile}" basedir="${bin}" >
 			      <metainf dir="${src}/META-INF">
 				  <include name="beans.xml" />
+			      <include name="persistence.xml" />
 			     </metainf>
 			</jar>
 		</target>

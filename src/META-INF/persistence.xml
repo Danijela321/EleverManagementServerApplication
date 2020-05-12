@@ -1,0 +1,21 @@
+
+<!-- @author Danijela -->
+
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+   <persistence-unit name="eleverDb" transaction-type="JTA">
+	<jta-data-source>java:/EleverDatabase</jta-data-source> 
+    <!--    <class>Elever</class> -->
+
+      <properties>
+     <!--      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:50000/EleverManagement" />
+            <property name="javax.persistence.jdbc.user" value="APP" />
+            <property name="javax.persistence.jdbc.password" value="APP" />
+         -->
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+         </properties>
+   </persistence-unit>
+</persistence>
