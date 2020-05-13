@@ -8,7 +8,9 @@ import javax.ejb.Remote;
 import com.yrgo.domain.Elever;
 
 /**
+ * 
  * @author Danijela
+ *
  */
 @Remote
 public interface EleverManagementService extends EleverManagementServiceLocal{

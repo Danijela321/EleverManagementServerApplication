@@ -8,17 +8,19 @@ import javax.enterprise.inject.Alternative;
 
 import com.yrgo.domain.Elever;
 
-
-/** 
+/**
  * @author Danijela
-  */
+ */
 @Stateless
 @Alternative
 public class EleverDataAccessTestingVersion implements EleverDataAccess {
 
+	/**
+	 * @author Danijela
+	 */
 	@Override
 	public void insert(Elever newElever) {
-		
+
 	}
 
 	/**
@@ -26,11 +28,11 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 	 */
 	@Override
 	public List<Elever> findAll() {
-		
-		Elever el1 = new Elever("Jan","Jansson","Yrgo",1);
-		Elever el2 = new Elever("Sara","Blomqvist","ITH",2);
-		Elever el3= new Elever("Adam","Andersson","Teknikhogskolan",1);
-		Elever el4=new Elever("Maria", "Marisson","Yrgo",2);
+
+		Elever el1 = new Elever("Jan", "Jansson", "Yrgo", 1);
+		Elever el2 = new Elever("Sara", "Blomqvist", "ITH", 2);
+		Elever el3 = new Elever("Adam", "Andersson", "Teknikhogskolan", 1);
+		Elever el4 = new Elever("Maria", "Marisson", "Yrgo", 2);
 		List<Elever> elever = new ArrayList<Elever>();
 		elever.add(el1);
 		elever.add(el2);
@@ -41,13 +43,13 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 
 	@Override
 	public List<Elever> findBySurname(String surname) {
-		
+
 		return null;
 	}
 
 	@Override
 	public Elever findById(int id) {
-		
+
 		return null;
 	}
 

@@ -20,11 +20,10 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	@Inject
 	private EleverDataAccess dao;
 	
-	
-	
 	/**
 	 * @author Danijela
 	 */
+	
 	@Override
 	public void registerElever(Elever elever) throws ServiceUnavailableException {
 		dao.insert(elever);
@@ -42,6 +41,7 @@ public class EleverManagementImplementation implements EleverManagementService, 
 		 * List<Elever> elever = new ArrayList<Elever>(); elever.add(el1); elever.add(el2); return elever;
 		 */
 	}
+	
 	/**
 	 * @author Danijela
 	 */
@@ -53,7 +53,7 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	/**
 	 * @author Danijela
 	 */
-	//@Override
+	@Override
 	public Elever getById(int id) {
 		return dao.findById(id);
 	}

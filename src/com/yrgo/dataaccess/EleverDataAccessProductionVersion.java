@@ -56,8 +56,8 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 	@Override
 	public Elever findById(int id) {
 		Query q = em.createQuery("select elever from Elever elever where elever.id = :id");
-	     q.setParameter("id", id);
-	     return (Elever)q.getSingleResult() ;
+		q.setParameter("id", id);
+		return (Elever) q.getSingleResult();
 	}
 
 }

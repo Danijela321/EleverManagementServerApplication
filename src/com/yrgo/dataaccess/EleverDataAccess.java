@@ -10,12 +10,30 @@ import com.yrgo.domain.Elever;
 
 @Local
 public interface EleverDataAccess {
+	/**
+	 * @author Danijela
+	 * @param newElever
+	 */
 	public void insert(Elever newElever);
 
+	/**
+	 * @author Danijela
+	 * @return
+	 */
 	public List<Elever> findAll();
 
+	/**
+	 * @author Danijela
+	 * @param surname
+	 * @return
+	 */
 	public List<Elever> findBySurname(String surname);
 
+	/**
+	 * @author Danijela
+	 * @param id
+	 * @return
+	 */
 	public Elever findById(int id);
 
 }

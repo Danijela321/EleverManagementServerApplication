@@ -1,6 +1,5 @@
 package com.yrgo.rest;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -11,17 +10,34 @@ import javax.ws.rs.Produces;
 import com.yrgo.domain.Elever;
 import com.yrgo.elevermanagement.EleverManagementServiceLocal;
 
+/**
+ * 
+ * @author Danijela
+ *
+ */
+
 @Stateless
 @Path("/elever")
 public class EleverResource {
 	@Inject
 	private EleverManagementServiceLocal service;
 	
+	/**
+	 * @author Danijela
+	 * @return
+	 */
+	
 	@GET
 	@Produces("application/XML")
 	public List<Elever> getAllElever() {
 		return service.getAllElever();
 	}
+	
+	/**
+	 * @author danijela
+	 * @param surname
+	 * @return
+	 */
 	
 	@GET
 	@Produces("application/XML")
@@ -30,6 +46,11 @@ public class EleverResource {
 		return service.searchBysurname(surname);
 	}
 	
+	/**
+	 * @author danijela
+	 * @param id
+	 * @return
+	 */
 	
 	@GET
 	@Produces("application/XML")
