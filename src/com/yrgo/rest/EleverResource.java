@@ -25,17 +25,20 @@ public class EleverResource {
 	
 	@GET
 	@Produces("application/XML")
-	@Path("{eleverNo}")
-	public Elever findEleverById(@PathParam("eleverNo")int id) {
-		return service.getById(id);
-	}
-
-	/*@GET
-	@Produces("application/XML")
 	@Path("{eleverSurname}")
 	public List<Elever> findEleverBysurname(@PathParam("eleverSurname") String surname) {
 		return service.searchBysurname(surname);
 	}
-	*/
+	
+	
+	@GET
+	@Produces("application/XML")
+	@Path("{eleverSurname}/{eleverNo}")
+	public Elever findEleverById(@PathParam("eleverNo")int id) {
+		return service.getById(id);
+	}
+
+	
+	
 	
 }
