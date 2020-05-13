@@ -24,11 +24,16 @@ public class EleverManagementWebserviceImplementation {
 	private EleverManagementServiceLocal service;
 	
 	public Elever getEleverById(int id) {
-		return null;
+		return service.getById(id);
 	}
 	
 	public List<Elever> getAllElever() {
 		return service.getAllElever();
+	}
+	
+	
+	public List<Elever> searchBysurname(String surname) {
+		return service.searchBysurname(surname);
 	}
 	
 }
