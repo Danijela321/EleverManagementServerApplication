@@ -11,7 +11,7 @@ import com.yrgo.domain.Elever;
 @Local
 public interface EleverManagementServiceLocal {
 
-	public void registerElever(Elever elever) throws  ServiceUnavailableException;
+		public void registerElever(Elever elever) throws  ServiceUnavailableException;
 		public List<Elever> getAllElever();
 		public List<Elever> searchBysurname(String surname);
 		public Elever getById(int id);

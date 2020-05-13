@@ -21,6 +21,7 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	private EleverDataAccess dao;
 	
 	
+	
 	/**
 	 * @author Danijela
 	 */
