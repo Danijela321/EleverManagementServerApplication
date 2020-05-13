@@ -9,11 +9,9 @@ import javax.enterprise.inject.Alternative;
 import com.yrgo.domain.Elever;
 
 
-/**
- * 
+/** 
  * @author Danijela
- *
- */
+  */
 @Stateless
 @Alternative
 public class EleverDataAccessTestingVersion implements EleverDataAccess {
@@ -24,9 +22,7 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 	}
 
 	/**
-	 * 
 	 * @author Danijela
-	 *
 	 */
 	@Override
 	public List<Elever> findAll() {
@@ -45,6 +41,12 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 
 	@Override
 	public List<Elever> findBySurname(String surname) {
+		
+		return null;
+	}
+
+	@Override
+	public Elever findById(int id) {
 		
 		return null;
 	}

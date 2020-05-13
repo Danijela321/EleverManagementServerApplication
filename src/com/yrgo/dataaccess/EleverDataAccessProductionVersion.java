@@ -12,9 +12,7 @@ import javax.persistence.Query;
 import com.yrgo.domain.Elever;
 
 /**
- * 
  * @author Danijela
- *
  */
 @Stateless
 @Default
@@ -50,6 +48,16 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 		Query q = em.createQuery("select elever from Elever elever where elever.surname = :surname");
 		q.setParameter("surname", surname);
 		return q.getResultList();
+	}
+
+	/**
+	 * @author Danijela
+	 */
+	@Override
+	public Elever findById(int id) {
+		Query q = em.createQuery("select elever from Elever elever where elever.id = :id");
+	     q.setParameter("id", id);
+	     return (Elever)q.getSingleResult() ;
 	}
 
 }

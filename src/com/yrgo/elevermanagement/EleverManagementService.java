@@ -8,15 +8,13 @@ import javax.ejb.Remote;
 import com.yrgo.domain.Elever;
 
 /**
- * 
  * @author Danijela
- *
  */
 @Remote
-public interface EleverManagementService {
+public interface EleverManagementService extends EleverManagementServiceLocal{
 	
-	public void registerElever(Elever elever);
-	public List<Elever>getAllElever ();
-	public List<Elever>searchBysurname(String surname);
+//	public void registerElever(Elever elever) throws ServiceUnavailableException;
+//	public List<Elever>getAllElever ();
+//	public List<Elever>searchBysurname(String surname);
 
 }

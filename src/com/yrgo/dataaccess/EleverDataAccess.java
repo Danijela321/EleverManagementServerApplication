@@ -5,17 +5,17 @@ import javax.ejb.Local;
 import com.yrgo.domain.Elever;
 
 /**
- * 
  * @author Danijela
- *
  */
 
 @Local
 public interface EleverDataAccess {
-	public  void insert(Elever newElever);
+	public void insert(Elever newElever);
 
-	public  List<Elever> findAll();
+	public List<Elever> findAll();
 
-	public  List<Elever> findBySurname(String surname);
+	public List<Elever> findBySurname(String surname);
+
+	public Elever findById(int id);
 
 }
