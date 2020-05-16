@@ -2,13 +2,16 @@ package com.yrgo.rest;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.yrgo.domain.Elever;
 import com.yrgo.elevermanagement.EleverManagementServiceLocal;
+import com.yrgo.elevermanagement.ServiceUnavailableException;
 
 /**
  * 
@@ -59,7 +62,22 @@ public class EleverResource {
 		return service.getById(id);
 	}
 
-	
-	
+	/**
+	 * @author danijela
+	 * @param elever
+	 * @return
+	 */
+	@POST
+	@Produces("application/XML")
+	@Consumes("application/XML")
+	public Elever createNyElever(Elever elever) {
+		try {
+			service.registerElever(elever);
+		} catch (ServiceUnavailableException e) {
+			// skriva mer kod för att fixa
+			e.printStackTrace();
+		}
+		return elever;
+	}
 	
 }
