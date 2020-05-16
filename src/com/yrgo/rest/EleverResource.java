@@ -31,7 +31,9 @@ public class EleverResource {
 	 */
 	
 	@GET
-	@Produces("application/XML")
+	//@Produces("application/XML")
+	//@Produces("application/JSON")
+	@Produces({"application/JSON", "application/XML"})
 	public List<Elever> getAllElever() {
 		return service.getAllElever();
 	}
@@ -43,7 +45,9 @@ public class EleverResource {
 	 */
 	
 	@GET
-	@Produces("application/XML")
+	//@Produces("application/XML")
+	//@Produces("application/JSON")
+	@Produces({"application/JSON", "application/XML"})
 	@Path("{eleverSurname}")
 	public List<Elever> findEleverBysurname(@PathParam("eleverSurname") String surname) {
 		return service.searchBysurname(surname);
@@ -56,7 +60,9 @@ public class EleverResource {
 	 */
 	
 	@GET
-	@Produces("application/XML")
+	//@Produces("application/XML")
+	//@Produces("application/JSON")
+	@Produces({"application/JSON", "application/XML"})
 	@Path("{eleverSurname}/{eleverNo}")
 	public Elever findEleverById(@PathParam("eleverNo")int id) {
 		return service.getById(id);
@@ -68,8 +74,11 @@ public class EleverResource {
 	 * @return
 	 */
 	@POST
-	@Produces("application/XML")
+	//@Produces("application/XML")
+	//@Produces("application/JSON")
+	@Produces({"application/JSON", "application/XML"})
 	@Consumes("application/XML")
+	//@Consumes({"application/JSON", "application/XML"})
 	public Elever createNyElever(Elever elever) {
 		try {
 			service.registerElever(elever);
