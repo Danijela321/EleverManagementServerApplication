@@ -2,6 +2,8 @@ package com.yrgo.elevermanagement;
 
 import java.util.List;
 import javax.ejb.Local;
+
+import com.yrgo.dataaccess.EleverNotFoundException;
 import com.yrgo.domain.Elever;
 
 /**
@@ -35,7 +37,8 @@ public interface EleverManagementServiceLocal {
 		 * @author Danijela
 		 * @param id
 		 * @return
+		 * @throws EleverNotFoundException 
 		 */
-		public Elever getById(int id);
+		public Elever getById(int id) throws EleverNotFoundException;
 	
 }

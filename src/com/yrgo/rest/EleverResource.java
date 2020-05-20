@@ -8,7 +8,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 
+import com.yrgo.dataaccess.EleverNotFoundException;
 import com.yrgo.domain.Elever;
 import com.yrgo.elevermanagement.EleverManagementServiceLocal;
 import com.yrgo.elevermanagement.ServiceUnavailableException;
@@ -64,8 +66,15 @@ public class EleverResource {
 	//@Produces("application/JSON")
 	@Produces({"application/JSON", "application/XML"})
 	@Path("{eleverSurname}/{eleverNo}")
-	public Elever findEleverById(@PathParam("eleverNo")int id) {
-		return service.getById(id);
+	public Response findEleverById(@PathParam("eleverNo")int id) {
+	try {
+		//return service.getById(id);
+		
+		Elever result=service.getById(id);
+		return Response.ok(result).build();
+	} catch(EleverNotFoundException e) {
+		return Response.status(404).build();
+	}
 	}
 
 	/**

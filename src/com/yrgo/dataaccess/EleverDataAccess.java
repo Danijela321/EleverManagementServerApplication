@@ -33,7 +33,8 @@ public interface EleverDataAccess {
 	 * @author Danijela
 	 * @param id
 	 * @return
+	 * @throws EleverNotFoundException 
 	 */
-	public Elever findById(int id);
+	public Elever findById(int id) throws EleverNotFoundException;
 
 }

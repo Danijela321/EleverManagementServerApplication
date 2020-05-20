@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -54,10 +55,16 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 	 * @author Danijela
 	 */
 	@Override
-	public Elever findById(int id) {
+	//20.05
+	public Elever findById(int id) throws EleverNotFoundException{
 		Query q = em.createQuery("select elever from Elever elever where elever.id = :id");
 		q.setParameter("id", id);
+		try {
 		return (Elever) q.getSingleResult();
+		}
+		catch(NoResultException e) {
+			throw new EleverNotFoundException();
+		}
 	}
 
 }

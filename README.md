@@ -83,4 +83,32 @@ http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
 
 
 
+I EleverRestClient i TestClient
+-status code 200
+(elever Lundqvist med id=4 finns i db)
+Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4")
+				.request("application/JSON").buildGet().invoke();
+Result:
+[Connection=keep-alive,Content-Length=73,Content-Type=application/json,Date=Wed, 20 May 2020 13:37:48 GMT]
+200
+{"id":4,"firstName":"Mate","surname":"Lundqvist","skola":"ITH","klass":2}
+
+
+-status code 404 - NOT FOUND
+(elever Lundqvist med id=4 finns inte i db)
+Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/10")
+				.request("application/JSON").buildGet().invoke();
+
+Result:
+[Connection=keep-alive,Content-Length=0,Date=Wed, 20 May 2020 14:14:33 GMT]
+404
+
+
+
+
+
+
+
+
+
 

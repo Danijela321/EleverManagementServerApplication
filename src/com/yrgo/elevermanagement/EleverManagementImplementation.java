@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.yrgo.dataaccess.EleverDataAccess;
+import com.yrgo.dataaccess.EleverNotFoundException;
 import com.yrgo.domain.Elever;
 
 /**
@@ -52,9 +53,10 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	
 	/**
 	 * @author Danijela
+	 * @throws EleverNotFoundException 
 	 */
 	@Override
-	public Elever getById(int id) {
+	public Elever getById(int id) throws EleverNotFoundException {
 		return dao.findById(id);
 	}
 
