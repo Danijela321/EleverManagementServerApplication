@@ -32,8 +32,45 @@ standalone.xml:
 
 
 
+OBS! Man kan inte hitta en elev pga id. 
+Man behöver först hitta en elever med efternamn och då kan man hitta elev pga id
+(exempel finns ner)
+
+
+
+Insomnia
+GET
+-get all elever
+GET + http://localhost:8080/EleverManagement/webservice/elever
+
+-get elever med samma efternamn
+GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
+
+-get elever med id (obs! först behöver man skriva efternamn)
+GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
+
+
+
+POST
+POST + http://localhost:8080/EleverManagement/webservice/elever
+Välja format: JSON
+i body skriver man t.ex.
+{    
+    "firstName": "Lana",
+    "surname": "Andersson",
+    "skola": "Teknikhogskolan",
+    "klass": 2
+  }
+SEND
+
+nu elev Lana finns i databas
+302        |Lana    |2          |Teknikhogskolan    |Andersson
+
+
+
 
 Chrom(browser)
+GET
 -get all elever
 http://localhost:8080/EleverManagement/webservice/elever
 
@@ -45,12 +82,5 @@ http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
 
 
 
-insomnia
--get all elever
-GET + http://localhost:8080/EleverManagement/webservice/elever
 
--get elever med samma efternamn
-GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
 
--get elever med id (obs! först behöver man skriva efternamn)
-GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
