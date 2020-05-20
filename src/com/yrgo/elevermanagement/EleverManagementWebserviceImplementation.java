@@ -5,6 +5,7 @@
 //import javax.inject.Inject;
 //import javax.jws.WebService;
 //
+//import com.yrgo.dataaccess.EleverNotFoundException;
 //import com.yrgo.domain.Elever;
 //
 ///**
@@ -24,9 +25,10 @@
 //	 * @author Danijela
 //	 * @param id
 //	 * @return
+//	 * @throws EleverNotFoundException 
 //	 */
 //	
-//	public Elever getEleverById(int id) {
+//	public Elever getEleverById(int id) throws EleverNotFoundException {
 //		return service.getById(id);
 //	}
 //	

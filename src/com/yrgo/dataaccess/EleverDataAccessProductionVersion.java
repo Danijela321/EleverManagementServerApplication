@@ -55,7 +55,6 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 	 * @author Danijela
 	 */
 	@Override
-	//20.05
 	public Elever findById(int id) throws EleverNotFoundException{
 		Query q = em.createQuery("select elever from Elever elever where elever.id = :id");
 		q.setParameter("id", id);

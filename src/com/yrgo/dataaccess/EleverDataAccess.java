@@ -34,6 +34,7 @@ public interface EleverDataAccess {
 	 * @param id
 	 * @return
 	 * @throws EleverNotFoundException 
+	 * @throws ClassNotFoundException 
 	 */
 	public Elever findById(int id) throws EleverNotFoundException;
 

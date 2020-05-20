@@ -5,6 +5,10 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import com.yrgo.domain.Elever;
 
@@ -20,9 +24,9 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 	 */
 	@Override
 	public void insert(Elever newElever) {
-
 	}
 
+//
 	/**
 	 * @author Danijela
 	 */
@@ -48,9 +52,15 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 	}
 
 	@Override
-	public Elever findById(int id) {
-
+	public Elever findById(int id) throws EleverNotFoundException {
 		return null;
-	}
 
+//		try {
+//			return null;
+//			}
+//			catch(NoResultException e) {
+//				throw new EleverNotFoundException();
+//			}
+
+	}
 }

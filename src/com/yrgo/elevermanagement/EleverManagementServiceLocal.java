@@ -38,6 +38,7 @@ public interface EleverManagementServiceLocal {
 		 * @param id
 		 * @return
 		 * @throws EleverNotFoundException 
+		 * @throws ClassNotFoundException 
 		 */
 		public Elever getById(int id) throws EleverNotFoundException;
 	

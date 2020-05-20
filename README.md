@@ -68,8 +68,15 @@ i body skriver man t.ex.
 SEND
 
 Result:
+
 Får status code:201 Created
-nu elev Lana finns i databas:	302        |Lana    |2          |Teknikhogskolan    |Andersson
+Header:
+Connection	keep-alive
+Location	http://localhost:8080/EleverManagement/webservice/elever/308
+Content-Length	0
+Date	Wed, 20 May 2020 17:41:48 GMT
+
+nu elev Lana finns i databas:	308        |Lana    |2          |Teknikhogskolan    |Andersson
 
 
 
@@ -122,6 +129,18 @@ Om man skapar en ny elev får man code status: 201
 nu elev Eva fins i databas: 308  |Eva  |1   |Humanus  |Adamsson
 
 
+_______________________________________________
+produktion och test versioner med hjälp av  beans.xm
+
+(i beans.xm behöver man att aktivera den kod som ligger när som en kommentar för att kör Testing Version
+ <!-- gör koden som kommentar för att programmet köra default version dvs Production Verison
+     <alternatives>
+	<class>com.yrgo.dataaccess.EleverDataAccessTestingVersion</class>
+	</alternatives>
+	-->
+
+(tar info from war inte jar)
+_______________________________________________
 
 
 

@@ -54,6 +54,7 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	/**
 	 * @author Danijela
 	 * @throws EleverNotFoundException 
+	 * @throws ClassNotFoundException 
 	 */
 	@Override
 	public Elever getById(int id) throws EleverNotFoundException {
