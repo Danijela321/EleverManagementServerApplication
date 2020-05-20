@@ -42,17 +42,21 @@ Insomnia
 GET
 -get all elever
 GET + http://localhost:8080/EleverManagement/webservice/elever
+(Får status code: 200 OK)
+
 
 -get elever med samma efternamn
 GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
+(Får status code: 200 OK)
 
 -get elever med id (obs! först behöver man skriva efternamn)
 GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
+(Får status code: 200 OK)
 
 
 
 POST
-POST + http://localhost:8080/EleverManagement/webservice/elever
+POST + http://localhost:8080/EleverManagement/webservice/elever    
 Välja format: JSON
 i body skriver man t.ex.
 {    
@@ -63,8 +67,9 @@ i body skriver man t.ex.
   }
 SEND
 
-nu elev Lana finns i databas
-302        |Lana    |2          |Teknikhogskolan    |Andersson
+Result:
+Får status code:201 Created
+nu elev Lana finns i databas:	302        |Lana    |2          |Teknikhogskolan    |Andersson
 
 
 
@@ -100,12 +105,21 @@ Response response = client.target("http://localhost:8080/EleverManagement/webser
 				.request("application/JSON").buildGet().invoke();
 
 Result:
+(eclipse
 [Connection=keep-alive,Content-Length=0,Date=Wed, 20 May 2020 14:14:33 GMT]
 404
+)
+(insomnia: får status code 404 Not found)
 
 
+(om man har fel i path)
+http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
+Result:
+RESTEASY003210: Could not find resource for full path: http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
 
-
+-status code 201
+Om man skapar en ny elev får man code status: 201	
+nu elev Eva fins i databas: 308  |Eva  |1   |Humanus  |Adamsson
 
 
 

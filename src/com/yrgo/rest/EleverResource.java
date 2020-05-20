@@ -1,4 +1,5 @@
 package com.yrgo.rest;
+import java.net.URI;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -86,16 +87,36 @@ public class EleverResource {
 	//@Produces("application/XML")
 	//@Produces("application/JSON")
 	@Produces({"application/JSON", "application/XML"})
-	@Consumes("application/XML")
+	@Consumes("application/JSON")
 	//@Consumes({"application/JSON", "application/XML"})
-	public Elever createNyElever(Elever elever) {
+	
+	public Response createNyElever(Elever elever) {
 		try {
 			service.registerElever(elever);
+			URI uri=null;
+			try {
+				uri= new URI("/elever/308");
+			}catch(Exception e) {}
+				return Response.created(uri).build();		
+			
 		} catch (ServiceUnavailableException e) {
-			// skriva mer kod för att fixa
-			e.printStackTrace();
+			return Response.status(504).build();
+			//e.printStackTrace();
 		}
-		return elever;
+	//	return elever;
+		
 	}
-	
 }
+	
+	//gamla metod
+//	public Elever createNyElever(Elever elever) {
+//		try {
+//			service.registerElever(elever);
+//		} catch (ServiceUnavailableException e) {
+//			// skriva mer kod för att fixa
+//			e.printStackTrace();
+//		}
+//		return elever;
+//	}
+		
+//}
