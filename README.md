@@ -30,6 +30,20 @@ standalone.xml:
                 </datasource>
 
 
+____________________________________________________________________________________________
+produktion och test versioner med hjälp av  beans.xm
+
+(i beans.xm behöver man att aktivera den kod som ligger när som en kommentar för att kör Testing Version
+ <!-- gör koden som kommentar för att programmet köra default version dvs Production Verison
+     <alternatives>
+	<class>com.yrgo.dataaccess.EleverDataAccessTestingVersion</class>
+	</alternatives>
+	-->
+
+___________________________________________________________________________________________
+
+
+REST
 
 
 OBS! Man kan inte hitta en elev pga id. 
@@ -53,15 +67,15 @@ GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
 GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
 (Får status code: 200 OK)
 
-
+---------------------------------------------------------------------------------
 
 POST
 POST + http://localhost:8080/EleverManagement/webservice/elever    
 Välja format: JSON
 i body skriver man t.ex.
 {    
-    "firstName": "Lana",
-    "surname": "Andersson",
+    "firstName": "Lanna",
+    "surname": "Adda",
     "skola": "Teknikhogskolan",
     "klass": 2
   }
@@ -74,12 +88,12 @@ Header:
 Connection	keep-alive
 Location	http://localhost:8080/EleverManagement/webservice/elever/308
 Content-Length	0
-Date	Wed, 20 May 2020 17:41:48 GMT
+Date	Mon, 25 May 2020 10:32:36 GMT
 
-nu elev Lana finns i databas:	308        |Lana    |2          |Teknikhogskolan    |Andersson
+nu elev Lana finns i databas:	513        |Lanna        |2          |Teknikhogskolan     |Adda
 
 
-
+----------------------------------------------------------------------------------------------
 
 Chrom(browser)
 GET
@@ -90,22 +104,24 @@ get elever med samma efternamn
 http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
 
 -get elever med id (obs! först behöver man skriva efternamn)
-http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
+http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507
+
+__________________________________________________________________________________________________
 
 
-
+STATUS CODE
 
 I EleverRestClient i TestClient
 -status code 200
-(elever Lundqvist med id=4 finns i db)
-Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4")
+(elever Lundqvist med id=507 finns i db)
+Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507")
 				.request("application/JSON").buildGet().invoke();
 Result:
 [Connection=keep-alive,Content-Length=73,Content-Type=application/json,Date=Wed, 20 May 2020 13:37:48 GMT]
 200
-{"id":4,"firstName":"Mate","surname":"Lundqvist","skola":"ITH","klass":2}
+{"id":507,"firstName":"Mate","surname":"Lundqvist","skola":"ITH","klass":2}
 
-
+---------------------------------------------------------------------------------
 -status code 404 - NOT FOUND
 (elever Lundqvist med id=4 finns inte i db)
 Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/10")
@@ -124,23 +140,16 @@ http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
 Result:
 RESTEASY003210: Could not find resource for full path: http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
 
+-------------------------------------------------------------------------------------------------------------------
 -status code 201
-Om man skapar en ny elev får man code status: 201	
-nu elev Eva fins i databas: 308  |Eva  |1   |Humanus  |Adamsson
+Om man skapar en ny elev får man code status: 201
+Elev:Anna Svensson, id:512, skola: Yrgo,  klass:1	
+nu elev Anna fins i databas: 512  |Anna       |1          |Yrgo   |Svensson
 
 
-_______________________________________________
-produktion och test versioner med hjälp av  beans.xm
 
-(i beans.xm behöver man att aktivera den kod som ligger när som en kommentar för att kör Testing Version
- <!-- gör koden som kommentar för att programmet köra default version dvs Production Verison
-     <alternatives>
-	<class>com.yrgo.dataaccess.EleverDataAccessTestingVersion</class>
-	</alternatives>
-	-->
 
-(tar info from war inte jar)
-_______________________________________________
+
 
 
 
