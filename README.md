@@ -121,7 +121,14 @@ Result:
 200
 {"id":507,"firstName":"Mate","surname":"Lundqvist","skola":"ITH","klass":2}
 
----------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------
+-status code 201
+Om man skapar en ny elev får man code status: 201
+Elev:Anna Svensson, id:512, skola: Yrgo,  klass:1	
+nu elev Anna fins i databas: 512  |Anna       |1          |Yrgo   |Svensson
+--------------------------------------------------------------------------------------------------------------------
+
 -status code 404 - NOT FOUND
 (elever Lundqvist med id=4 finns inte i db)
 Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/10")
@@ -140,11 +147,7 @@ http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
 Result:
 RESTEASY003210: Could not find resource for full path: http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
 
--------------------------------------------------------------------------------------------------------------------
--status code 201
-Om man skapar en ny elev får man code status: 201
-Elev:Anna Svensson, id:512, skola: Yrgo,  klass:1	
-nu elev Anna fins i databas: 512  |Anna       |1          |Yrgo   |Svensson
+
 
 
 
