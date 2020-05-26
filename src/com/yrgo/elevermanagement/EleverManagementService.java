@@ -9,14 +9,11 @@ import com.yrgo.domain.Elever;
 
 /**
  * 
- * @author Danijela
+ * @author danijela
  *
  */
 @Remote
 public interface EleverManagementService extends EleverManagementServiceLocal{
-	
-//	public void registerElever(Elever elever) throws ServiceUnavailableException;
-//	public List<Elever>getAllElever ();
-//	public List<Elever>searchBysurname(String surname);
+
 
 }

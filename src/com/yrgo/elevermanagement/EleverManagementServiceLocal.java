@@ -7,38 +7,37 @@ import com.yrgo.dataaccess.EleverNotFoundException;
 import com.yrgo.domain.Elever;
 
 /**
- * @author Danijela
+ * @author danijela
  */
 
 @Local
 public interface EleverManagementServiceLocal {
 
 	/**
-	 * @author Danijela
-	 * @param elever
-	 * @throws ServiceUnavailableException
+	 * @author danijela
+	 * @param elever registrerar elev
+	 * @throws ServiceUnavailableException rollbace ar true
 	 */
 		public void registerElever(Elever elever) throws  ServiceUnavailableException;
 		
 		/**
-		 * @author Danijela
-		 * @return
+		 * @author danijela
+		 * @return alla elever
 		 */
 		public List<Elever> getAllElever();
 		
 		/**
-		 * @author Danijela
-		 * @param surname
-		 * @return
+		 * @author danijela
+		 * @param surname efternamn
+		 * @return elever med samma efternamn
 		 */
 		public List<Elever> searchBysurname(String surname);
 		
 		/**
-		 * @author Danijela
-		 * @param id
-		 * @return
-		 * @throws EleverNotFoundException 
-		 * @throws ClassNotFoundException 
+		 * @author danijela
+		 * @param id elevs id
+		 * @return elev med id
+		 * @throws EleverNotFoundException kastar exception om elev inte finns
 		 */
 		public Elever getById(int id) throws EleverNotFoundException;
 	

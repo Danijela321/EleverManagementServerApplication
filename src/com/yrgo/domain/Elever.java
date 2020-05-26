@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * 
- * @author Danijela
+ * @author danijela
  *
  */
 
@@ -26,12 +26,11 @@ public class Elever implements java.io.Serializable{
 	public Elever() {}
 	
 	/**
-	 * @author Danijela
-	 * 
-	 * @param firstName
-	 * @param surname
-	 * @param skola
-	 * @param klass
+	 * @author danijela
+	 * @param firstName forenamn
+	 * @param surname efternamn
+	 * @param skola skola
+	 * @param klass klass
 	 */
 	public Elever(String firstName, String surname, String skola, int klass) {
 		this.firstName = firstName;
@@ -42,23 +41,23 @@ public class Elever implements java.io.Serializable{
 	
 	
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	public String toString() {
 		return "Elev: " + this.firstName + " " + this.surname+ " "+this.skola+ " "+this.klass;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * @author danijela
+	 * @return id
 	 */
 	public int getId() {
 		return id;
 	}
 	
 	/**
-	 * 
-	 * @param id
+	 * @author danijela
+	 * @param id set id
 	 */
 
 	public void setId(int id) {
@@ -66,16 +65,16 @@ public class Elever implements java.io.Serializable{
 	}
 
 	/**
-	 * 
-	 * @return
+	 * @author danijela
+	 * @return fornamn
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
 	
 	/**
-	 * 
-	 * @param firstName
+	 * @author danijela
+	 * @param firstName set fornamn
 	 */
 
 	public void setFirstName(String firstName) {
@@ -83,16 +82,16 @@ public class Elever implements java.io.Serializable{
 	}
 	
 /**
- * 
- * @return
+ * @author danijela
+ * @return efternamn
  */
 	public String getSurname() {
 		return surname;
 	}
 	
 	/**
-	 * 
-	 * @param surname
+	 * @author danijela
+	 * @param surname set efternamn
 	 */
 
 	public void setSurname(String surname) {
@@ -100,8 +99,8 @@ public class Elever implements java.io.Serializable{
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * @author danijela
+	 * @return skolas namn
 	 */
 
 	public String getSkola() {
@@ -109,8 +108,8 @@ public class Elever implements java.io.Serializable{
 	}
 	
 	/**
-	 * 
-	 * @param skola
+	 * @author danijela
+	 * @param skola set skolas namn
 	 */
 
 	public void setSkola(String skola) {
@@ -118,8 +117,8 @@ public class Elever implements java.io.Serializable{
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * @author danijela
+	 * @return klass
 	 */
 
 	public int getKlass() {
@@ -127,8 +126,8 @@ public class Elever implements java.io.Serializable{
 	}
 
 	/**
-	 * 
-	 * @param klass
+	 * @author danijela
+	 * @param klass set klass
 	 */
 	public void setKlass(int klass) {
 		this.klass = klass;

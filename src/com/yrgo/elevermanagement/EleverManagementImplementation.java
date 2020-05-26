@@ -12,7 +12,7 @@ import com.yrgo.dataaccess.EleverNotFoundException;
 import com.yrgo.domain.Elever;
 
 /**
- * @author Danijela
+ * @author danijela
  */
 
 @Stateless
@@ -22,7 +22,7 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	private EleverDataAccess dao;
 	
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	
 	@Override
@@ -31,20 +31,16 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	}
 
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
 	public List<Elever> getAllElever() {
 		return dao.findAll();
-		/*
-		 * Elever el1 = new Elever("Jan","Jansson","Yrgo",1); 
-		 * Elever el2 = new Elever("Sara","Blomqvist","ITH",2); 
-		 * List<Elever> elever = new ArrayList<Elever>(); elever.add(el1); elever.add(el2); return elever;
-		 */
+	
 	}
 	
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
 	public List<Elever> searchBysurname(String surname) {
@@ -52,9 +48,8 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	}
 	
 	/**
-	 * @author Danijela
-	 * @throws EleverNotFoundException 
-	 * @throws ClassNotFoundException 
+	 * @author danijela
+	 * @throws EleverNotFoundException kastar exception om elev inte finns
 	 */
 	@Override
 	public Elever getById(int id) throws EleverNotFoundException {

@@ -13,7 +13,7 @@ import javax.persistence.Query;
 import com.yrgo.domain.Elever;
 
 /**
- * @author Danijela
+ * @author danijela
  */
 @Stateless
 @Default
@@ -23,7 +23,7 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 	private EntityManager em;
 
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
 	public void insert(Elever newElever) {
@@ -32,7 +32,7 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 	}
 
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
 	public List<Elever> findAll() {
@@ -42,7 +42,7 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 	}
 
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
 	public List<Elever> findBySurname(String surname) {
@@ -52,16 +52,15 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 	}
 
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
-	public Elever findById(int id) throws EleverNotFoundException{
+	public Elever findById(int id) throws EleverNotFoundException {
 		Query q = em.createQuery("select elever from Elever elever where elever.id = :id");
 		q.setParameter("id", id);
 		try {
-		return (Elever) q.getSingleResult();
-		}
-		catch(NoResultException e) {
+			return (Elever) q.getSingleResult();
+		} catch (NoResultException e) {
 			throw new EleverNotFoundException();
 		}
 	}

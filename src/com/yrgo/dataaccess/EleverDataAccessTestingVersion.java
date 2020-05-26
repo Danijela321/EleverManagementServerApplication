@@ -13,14 +13,14 @@ import javax.persistence.Query;
 import com.yrgo.domain.Elever;
 
 /**
- * @author Danijela
+ * @author danijela
  */
 @Stateless
 @Alternative
 public class EleverDataAccessTestingVersion implements EleverDataAccess {
 
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
 	public void insert(Elever newElever) {
@@ -28,7 +28,7 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 
 //
 	/**
-	 * @author Danijela
+	 * @author danijela
 	 */
 	@Override
 	public List<Elever> findAll() {
@@ -45,12 +45,18 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 		return elever;
 	}
 
+	/**
+	 * @author danijela
+	 */
 	@Override
 	public List<Elever> findBySurname(String surname) {
 
 		return null;
 	}
 
+	/**
+	 * @author danijela
+	 */
 	@Override
 	public Elever findById(int id) throws EleverNotFoundException {
 		return null;

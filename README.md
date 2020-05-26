@@ -7,7 +7,6 @@ clona fyra projekt i Eclipso-workspace:
 3.EleverManagementJPA
 4.EleverManagementTestClient
 
-
 _____________________________________________________________________
 
 command promt(Derby-db):
@@ -37,7 +36,7 @@ Addera denna kod i standalone.xml:
 _______________________________________________________________________________________________
 
 
-build.xml i EleverManagementServerApplication kör som Ant för att bygga projekt
+build.xml i EleverManagementServerApplication kör som Ant Build för att bygga projekt
 
 ____________________________________________________________________________________________
 produktion och test versioner med hjälp av  beans.xm
@@ -90,6 +89,7 @@ i body skriver man t.ex.
     "klass": 2
   }
 SEND
+
 
 Result:
 
