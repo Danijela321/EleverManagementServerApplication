@@ -21,21 +21,19 @@ connect 'jdbc:derby://localhost:50000/EleverManagement; create=true';
 Command promt Wildfly: 
 standalone.bat
 ______________________________________________________________________
-Addera denna kod i standalone.xml:
-
- <datasource jndi-name="java:/EleverDatabase" pool-name="EleverDatabase" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:derby://localhost:50000/EleverManagement</connection-url>
-                    <driver>derbyclient.jar</driver>
-                    <pool>
-                        <min-pool-size>8</min-pool-size>
-                        <initial-pool-size>8</initial-pool-size>
-                        <max-pool-size>32</max-pool-size>
-                    </pool>
-                    <security>
-                        <user-name>APP</user-name>
-                        <password>APP</password>
-                    </security>
-                </datasource>
+Addera denna kod i standalone.xml: <datasource jndi-name="java:/EleverDatabase" pool-name="EleverDatabase" enabled="true" use-java-context="true">
+<connection-url>jdbc:derby://localhost:50000/EleverManagement</connection-url>
+<driver>derbyclient.jar</driver>
+<pool>
+<min-pool-size>8</min-pool-size>
+<initial-pool-size>8</initial-pool-size>
+<max-pool-size>32</max-pool-size>
+</pool>
+<security>
+<user-name>APP</user-name>
+<password>APP</password>
+</security>
+</datasource>
 _________________________________________________________________________________________________________
 
 
