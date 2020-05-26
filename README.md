@@ -9,7 +9,6 @@ clona fyra projekt i Eclipso-workspace:
 2.EleverRestClient,
 3.EleverManagementJPA,
 4.EleverManagementTestClient
-
 _____________________________________________________________________
 
 command promt(Derby-db):
@@ -23,6 +22,7 @@ Command promt Wildfly:
 standalone.bat
 ______________________________________________________________________
 Addera denna kod i standalone.xml:
+
  <datasource jndi-name="java:/EleverDatabase" pool-name="EleverDatabase" enabled="true" use-java-context="true">
                     <connection-url>jdbc:derby://localhost:50000/EleverManagement</connection-url>
                     <driver>derbyclient.jar</driver>
