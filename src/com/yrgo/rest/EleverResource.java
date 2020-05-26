@@ -61,6 +61,9 @@ public class EleverResource {
 	 * @author danijela
 	 * @param id hitta elever med unik id
 	 * @return elever med exakt id
+	 * nar man hittar pga id, vilken efternamn anvander man inte är viktig
+	 *t.ex.  get ....... elever/xxx/507 ,får man elev som har id=507
+	 *eftersom i koden result=.....getById(id)
 	 */
 
 	@GET
@@ -68,10 +71,11 @@ public class EleverResource {
 	// @Produces("application/JSON")
 	@Produces({ "application/JSON", "application/XML" })
 	@Path("{eleverSurname}/{eleverNo}")
+	//nar man hittar pga id, vilken efternamn anvander man inte är viktig
+	//t.ex.  get ....... elever/xxx/507 ,får man elev som har id=507
+	//eftersom i koden result=.....getById(id)
 	public Response findEleverById(@PathParam("eleverNo") int id) {
 		try {
-			// return service.getById(id);
-
 			Elever result = service.getById(id);
 			return Response.ok(result).build();
 		} catch (EleverNotFoundException e) {

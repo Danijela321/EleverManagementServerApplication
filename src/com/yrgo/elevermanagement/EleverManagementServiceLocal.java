@@ -16,7 +16,7 @@ public interface EleverManagementServiceLocal {
 	/**
 	 * @author danijela
 	 * @param elever registrerar elev
-	 * @throws ServiceUnavailableException rollbace ar true
+	 * @throws ServiceUnavailableException rollback ar true
 	 */
 		public void registerElever(Elever elever) throws  ServiceUnavailableException;
 		

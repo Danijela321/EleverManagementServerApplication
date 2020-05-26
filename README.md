@@ -33,12 +33,12 @@ Addera denna kod i standalone.xml:
                         <password>APP</password>
                     </security>
                 </datasource>
-_______________________________________________________________________________________________
+_________________________________________________________________________________________________________
 
 
 build.xml i EleverManagementServerApplication kör som Ant Build för att bygga projekt
 
-____________________________________________________________________________________________
+________________________________________________________________________________________________________
 produktion och test versioner med hjälp av  beans.xm
 
 (i beans.xm behöver man att aktivera den kod som ligger när som en kommentar för att kör Testing Version
@@ -47,8 +47,8 @@ produktion och test versioner med hjälp av  beans.xm
 	<class>com.yrgo.dataaccess.EleverDataAccessTestingVersion</class>
 	</alternatives>
 	-->
-
-___________________________________________________________________________________________
+och kör Main.java i EleverManagementTestClient. Då får man elever som finns i Testing Version.
+_______________________________________________________________________________________________________
 
 
 REST
@@ -73,7 +73,7 @@ GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
 (Får status code: 200 OK)
 
 -get elever med id (obs! först behöver man skriva efternamn)
-GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/4
+GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507
 (Får status code: 200 OK)
 
 ---------------------------------------------------------------------------------
@@ -141,7 +141,7 @@ nu elev Anna fins i databas: 512  |Anna       |1          |Yrgo   |Svensson
 
 -status code 404 - NOT FOUND
 (elever Lundqvist med id=4 finns inte i db)
-Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/10")
+Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/57")
 				.request("application/JSON").buildGet().invoke();
 
 Result:
