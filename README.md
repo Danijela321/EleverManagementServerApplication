@@ -1,6 +1,14 @@
 Om projekt:
 -registrera elever på alla yrkehögskolor i en stad
+__________________________________________________________________
+clona fyra projekt i Eclipso-workspace:
+1.EleverManagementServerApplication
+2.EleverRestClient
+3.EleverManagementJPA
+4.EleverManagementTestClient
 
+
+_____________________________________________________________________
 
 command promt(Derby-db):
 NetworkServerControl.bat -p 50000 start
@@ -11,10 +19,8 @@ connect 'jdbc:derby://localhost:50000/EleverManagement; create=true';
 
 Command promt Wildfly: 
 standalone.bat
-
-
-
-standalone.xml:
+______________________________________________________________________
+Addera denna kod i standalone.xml:
  <datasource jndi-name="java:/EleverDatabase" pool-name="EleverDatabase" enabled="true" use-java-context="true">
                     <connection-url>jdbc:derby://localhost:50000/EleverManagement</connection-url>
                     <driver>derbyclient.jar</driver>
@@ -28,7 +34,10 @@ standalone.xml:
                         <password>APP</password>
                     </security>
                 </datasource>
+_______________________________________________________________________________________________
 
+
+build.xml i EleverManagementServerApplication kör som Ant för att bygga projekt
 
 ____________________________________________________________________________________________
 produktion och test versioner med hjälp av  beans.xm
@@ -53,6 +62,7 @@ Man behöver först hitta en elever med efternamn och då kan man hitta elev pga
 
 
 Insomnia
+---------------------------------------------------------------------------------
 GET
 -get all elever
 GET + http://localhost:8080/EleverManagement/webservice/elever
