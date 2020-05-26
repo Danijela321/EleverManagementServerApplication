@@ -1,10 +1,13 @@
+OBS! En del av instruction kan man inte se direkt i readme, så
+behöver man att klika edit readme för att se hela instruktion.
+
 Om projekt:
--registrera elever på alla yrkehögskolor i en stad
+-Registrerar elever på alla yrkehögskolor i en stad.
 __________________________________________________________________
 clona fyra projekt i Eclipso-workspace:
-1.EleverManagementServerApplication
-2.EleverRestClient
-3.EleverManagementJPA
+1.EleverManagementServerApplication,
+2.EleverRestClient,
+3.EleverManagementJPA,
 4.EleverManagementTestClient
 
 _____________________________________________________________________
@@ -153,7 +156,7 @@ Result:
 
 
 (om man har fel i path)
-http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
+http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/507
 Result:
 RESTEASY003210: Could not find resource for full path: http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
 
