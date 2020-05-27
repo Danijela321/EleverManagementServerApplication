@@ -61,12 +61,5 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 	public Elever findById(int id) throws EleverNotFoundException {
 		return null;
 
-//		try {
-//			return null;
-//			}
-//			catch(NoResultException e) {
-//				throw new EleverNotFoundException();
-//			}
-
 	}
 }
