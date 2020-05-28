@@ -62,4 +62,22 @@ public class EleverDataAccessTestingVersion implements EleverDataAccess {
 		return null;
 
 	}
+
+	/**
+	 * @author danijela
+	 */
+	@Override
+	public void updateElever(int id, String surname, int klass) throws EleverNotFoundException {
+				
+	}
+	
+	/**
+	 * @author danijela
+	 */
+
+	@Override
+	public void deleteElever(int id) throws EleverNotFoundException {
+				
+	}
+
 }

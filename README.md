@@ -107,6 +107,37 @@ nu elev Lana finns i databas:	513        |Lanna        |2          |Teknikhogsko
 
 ----------------------------------------------------------------------------------------------
 
+DELETE
+
+Eclipso:
+elev med id=100 finns inte i databas
+http://localhost:8080/EleverManagement/webservice/elever/100
+Radera status ar 404
+Elev finns inte langre i databas
+
+elev med id=508 finns  i databas
+Radera status ar 204
+Elev har blivit borttagen
+
+___________________________________________________________________________________________________
+
+
+
+PUT (obs. Man kan bara updatera klass i vilken elever går och efternamn)
+Eclipse
+Update status ar 200
+{"id":508,"firstName":"Mike","surname":"ny efternamn","skola":"ITH","klass":2}
+
+-om vi använder "application/xml"
+Uppdatera status ar 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><elever><firstName>Mike</firstName><id>508</id><klass>2</klass><skola>ITH</skola><surname>ny efternamn2</surname></elever>
+
+
+
+
+_________________________________________________________________________________________________
+
+
 Chrom(browser)
 GET
 -get all elever
@@ -119,6 +150,9 @@ http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
 http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507
 
 __________________________________________________________________________________________________
+
+
+
 
 
 STATUS CODE
@@ -152,7 +186,7 @@ nu elev Anna fins i databas: 512  |Anna       |1          |Yrgo   |Svensson
 --------------------------------------------------------------------------------------------------------------------
 
 -status code 404 - NOT FOUND
-(elever Lundqvist med id=4 finns inte i db)
+(elever Lundqvist med id=57 finns inte i db)
 Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/57")
 				.request("application/JSON").buildGet().invoke();
 

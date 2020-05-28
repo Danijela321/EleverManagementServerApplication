@@ -37,4 +37,21 @@ public interface EleverDataAccess {
 	 */
 	public Elever findById(int id) throws EleverNotFoundException;
 
+	
+	/**
+	 * @author danijela
+	 * @param id elevs id
+	 * @param surname elevs efternamn
+	 * @param klass elevs år
+	 * @throws EleverNotFoundException kastar exception om programmet kan inte updatera info om elev
+	 */
+	void updateElever(int id, String surname, int klass) throws EleverNotFoundException;
+
+	/**
+	 * @author danijela
+	 * @param id elevs id
+	 * @throws EleverNotFoundException kastar exception om programmet kan inte radera elev
+	 */
+	void deleteElever(int id) throws EleverNotFoundException;
+
 }

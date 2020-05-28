@@ -65,4 +65,25 @@ public class EleverDataAccessProductionVersion implements EleverDataAccess {
 		}
 	}
 
+	/**
+	 * @author danijela
+	 */
+	@Override
+	public void updateElever(int id, String surname, int klass) throws EleverNotFoundException {
+		Elever e = findById(id);
+		e.setSurname(surname);
+		e.setKlass(klass);
+		
+	}
+	
+	/**
+	 * @author danijela	 
+	 */
+	@Override
+	public void deleteElever(int id) throws EleverNotFoundException {
+		Elever elev = findById(id);
+		em.remove(elev);
+	}
+
+	
 }

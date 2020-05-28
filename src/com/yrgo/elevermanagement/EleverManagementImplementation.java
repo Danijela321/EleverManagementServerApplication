@@ -11,6 +11,8 @@ import com.yrgo.dataaccess.EleverDataAccess;
 import com.yrgo.dataaccess.EleverNotFoundException;
 import com.yrgo.domain.Elever;
 
+
+
 /**
  * @author danijela
  */
@@ -56,4 +58,26 @@ public class EleverManagementImplementation implements EleverManagementService, 
 		return dao.findById(id);
 	}
 
+	/**
+	 * @author danijela
+	 */
+
+	
+	
+	/**
+	 * @author danijela
+	 */
+	@Override
+	public void deleteElever(int id) throws EleverNotFoundException {
+		dao.deleteElever(id);
+			
+	}
+
+
+
+	@Override
+	public void updateElever(int id, String surname, int klass) throws EleverNotFoundException {
+		dao.updateElever(id, surname, klass);
+		
+	}
 }

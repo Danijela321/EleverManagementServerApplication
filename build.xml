@@ -84,9 +84,7 @@
 					</classpath>
 					<packageset dir="${src}">
 						<include name="com/**" />
-
 					</packageset>
-
 				</javadoc>
 			    </target>
 			

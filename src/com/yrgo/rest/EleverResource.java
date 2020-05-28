@@ -5,8 +5,10 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -16,6 +18,7 @@ import com.yrgo.dataaccess.EleverNotFoundException;
 import com.yrgo.domain.Elever;
 import com.yrgo.elevermanagement.EleverManagementServiceLocal;
 import com.yrgo.elevermanagement.ServiceUnavailableException;
+
 
 /**
  * 
@@ -107,6 +110,37 @@ public class EleverResource {
 
 		} catch (ServiceUnavailableException e) {
 			return Response.status(504).build();
+		}
+	}
+	
+	/**
+	 * @author danijela
+	 * @param id elevs id
+	 * @return respons code
+	 */
+	
+	@DELETE
+	@Path("{eleverNo}")
+	public Response deleteEmployee(@PathParam("eleverNo") int id) {
+		try {
+			service.deleteElever(id);
+			//om det är ok eller finns inte
+			return Response.status(204).build();
+		} catch (EleverNotFoundException e) {
+			return Response.status(404).build();
+		}
+	}
+	
+	@PUT
+	@Path("{eleverNo}")
+	@Produces({"application/JSON", "application/XML"})
+	@Consumes({"application/JSON"})
+	public Response updateEmployee(@PathParam("eleverNo") int id,Elever e){
+		try {
+			service.updateElever(id, e.getSurname(), e.getKlass());
+			return Response.ok(service.getById(id)).build();
+		} catch (EleverNotFoundException e1) {
+			return Response.status(404).build();
 		}
 	}
 }
