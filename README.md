@@ -1,5 +1,6 @@
-OBS! En del av instruction kan man inte se direkt i readme, så
-behöver man att klika edit readme för att se hela instruktion.
+OBS! En del av instruction kan man inte se direkt i readme på gitHub sida, så
+behöver man att klika edit readme i gitHub för att se hela instruktion.
+Andra möjlighet är att man öppnar README file.
 
 Om projekt:
 -Registrerar elever på alla yrkehögskolor i en stad.
@@ -40,7 +41,7 @@ ________________________________________________________________________________
 build.xml i EleverManagementServerApplication kör som Ant Build för att bygga projekt
 
 ________________________________________________________________________________________________________
-produktion och test versioner med hjälp av  beans.xm
+produktion och test versioner med hjälp av  beans.xml
 
 (i beans.xm behöver man att aktivera den kod som ligger när som en kommentar för att kör Testing Version
  <!-- gör koden som kommentar för att programmet köra default version dvs Production Verison
@@ -131,6 +132,16 @@ Result:
 [Connection=keep-alive,Content-Length=73,Content-Type=application/json,Date=Wed, 20 May 2020 13:37:48 GMT]
 200
 {"id":507,"firstName":"Mate","surname":"Lundqvist","skola":"ITH","klass":2}
+
+
+-.-.-.-.-.-.--.-.--.
+om man vill ha respons i xml format
+Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507")
+				.request("application/xml").buildGet().invoke();
+Result:
+Status code: 200
+Resultat fran databas: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><elever><firstName>Mate</firstName><id>507</id><klass>2</klass><skola>ITH</skola><surname>Lundqvist</surname></elever>
+
 
 
 -------------------------------------------------------------------------------------------------------------------
