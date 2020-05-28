@@ -119,6 +119,13 @@ elev med id=508 finns  i databas
 Radera status ar 204
 Elev har blivit borttagen
 
+Insomnia:
+new Request
+DELETE + http://localhost:8080/EleverManagement/webservice/elever/850
+Send
+
+-använda get metod för att titta på i databas. Elever med id=850 finns inte längre i db
+
 ___________________________________________________________________________________________________
 
 
@@ -132,7 +139,25 @@ Update status ar 200
 Uppdatera status ar 200
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><elever><firstName>Mike</firstName><id>508</id><klass>2</klass><skola>ITH</skola><surname>ny efternamn2</surname></elever>
 
+Insomnia:
+New Request
+PUT+ http://localhost:8080/EleverManagement/webservice/elever/853
+body-JSON (bara saker som vi vill och kan andra, t.ex: surname och klass-ar:
+{    
+     "surname": "Addamson63",
+     "klass": 1
+  }
 
+SEND
+
+Resultat:
+{
+  "id": 853,
+  "firstName": "Lanna30",
+  "surname": "Addamson63",
+  "skola": "Teknikhogskolan",
+  "klass": 1
+}
 
 
 _________________________________________________________________________________________________
