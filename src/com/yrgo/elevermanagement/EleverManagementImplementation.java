@@ -21,6 +21,9 @@ import com.yrgo.domain.Elever;
 public class EleverManagementImplementation implements EleverManagementService, EleverManagementServiceLocal {
 
 	@Inject
+	private ExternalPayrollSystem payrollSystem;
+	
+	@Inject
 	private EleverDataAccess dao;
 	
 	/**
@@ -30,6 +33,7 @@ public class EleverManagementImplementation implements EleverManagementService, 
 	@Override
 	public void registerElever(Elever elever) throws ServiceUnavailableException {
 		dao.insert(elever);
+		payrollSystem.enrollElever(elever);
 	}
 
 	/**
@@ -58,12 +62,7 @@ public class EleverManagementImplementation implements EleverManagementService, 
 		return dao.findById(id);
 	}
 
-	/**
-	 * @author danijela
-	 */
 
-	
-	
 	/**
 	 * @author danijela
 	 */
@@ -73,8 +72,9 @@ public class EleverManagementImplementation implements EleverManagementService, 
 			
 	}
 
-
-
+	/**
+	 * @author danijela
+	 */
 	@Override
 	public void updateElever(int id, String surname, int klass) throws EleverNotFoundException {
 		dao.updateElever(id, surname, klass);

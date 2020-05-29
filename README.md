@@ -69,14 +69,20 @@ GET
 GET + http://localhost:8080/EleverManagement/webservice/elever
 (Får status code: 200 OK)
 
-
 -get elever med samma efternamn
 GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist
 (Får status code: 200 OK)
 
--get elever med id (obs! först behöver man skriva efternamn)
+-get elever med efternamn+id 
 GET + http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507
 (Får status code: 200 OK)
+
+-get elever bara med id
+GET + http://localhost:8080/EleverManagement/webservice/elever/vadsomhels/507
+t.ex.
+GET + http://localhost:8080/EleverManagement/webservice/elever/xxx/507
+(Får status code: 200 OK)
+
 
 ---------------------------------------------------------------------------------
 
@@ -104,6 +110,14 @@ Date	Mon, 25 May 2020 10:32:36 GMT
 
 nu elev Lana finns i databas:	513        |Lanna        |2          |Teknikhogskolan     |Adda
 
+-.-.--.-.---.-.--.-.--.-.--.-.-.--.-.-.-.--
+Om fel händer:
+Får status code: 504 Gateway Time-out
+
+< HTTP/1.1 504 Gateway Time-out
+< Connection: keep-alive
+< Content-Length: 0
+< Date: Fri, 29 May 2020 18:51:22 GMT
 
 ----------------------------------------------------------------------------------------------
 
@@ -128,9 +142,7 @@ Send
 
 ___________________________________________________________________________________________________
 
-
-
-PUT (obs. Man kan bara updatera klass i vilken elever går och efternamn)
+PUT (obs. Man kan bara uppdatera klass i vilken elever går och efternamn)
 Eclipse
 Update status ar 200
 {"id":508,"firstName":"Mike","surname":"ny efternamn","skola":"ITH","klass":2}
@@ -176,13 +188,9 @@ http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507
 
 __________________________________________________________________________________________________
 
-
-
-
-
 STATUS CODE
 
-I EleverRestClient i TestClient
+I package EleverRestClient  klass TestClient
 -status code 200
 (elever Lundqvist med id=507 finns i db)
 Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507")
@@ -193,7 +201,7 @@ Result:
 {"id":507,"firstName":"Mate","surname":"Lundqvist","skola":"ITH","klass":2}
 
 
--.-.-.-.-.-.--.-.--.
+-.-.-.-.-.-.--.-.--.-.-.-.-.-.-.-.--.--.-.--.--.-.-.--.-.-.--.-.--.-.-.--.-.-.--.-.-
 om man vill ha respons i xml format
 Response response = client.target("http://localhost:8080/EleverManagement/webservice/elever/Lundqvist/507")
 				.request("application/xml").buildGet().invoke();
@@ -204,11 +212,20 @@ Resultat fran databas: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><e
 
 
 -------------------------------------------------------------------------------------------------------------------
+Status code 201 och 504 beror på Math.random() funktion som liggär i EleverMenagmentServerApplication
+i package com.yrgo.elevermanagement i klass ExternalPayrollSystem
+(obs! man behöver prova flera gånger att köra programmet för får status code 201 elle3 504)
+
 -status code 201
 Om man skapar en ny elev får man code status: 201
 Elev:Anna Svensson, id:512, skola: Yrgo,  klass:1	
 nu elev Anna fins i databas: 512  |Anna       |1          |Yrgo   |Svensson
 --------------------------------------------------------------------------------------------------------------------
+-status code 504
+Om fel händer får man meddelande: "Fel händer! Status code: 504"
+Ny elever är inte tillagd i databas.
+
+----------------------------------------------------------------------------------------------------------------------
 
 -status code 404 - NOT FOUND
 (elever Lundqvist med id=57 finns inte i db)
@@ -222,11 +239,28 @@ Result:
 )
 (insomnia: får status code 404 Not found)
 
+__________________________________________________________________________________________________
+Projekt:
 
-(om man har fel i path)
-http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/507
-Result:
-RESTEASY003210: Could not find resource for full path: http://localhost:8080/EleverManagement/webservice/eleveeer/Lundqvist/4
+EleverManegmentJPA
+TestJPA.java
+tillägger två nya elever i databas med hjälp av persistence
+ ("Frank", "Andersson", "Teknikhogskolan", 2);
+("Black", "Andersson", "Folkhogskolan", 1);
+
+----------------------------------------------------------------
+EleverManegmentTestClient
+Main.java
+tillägger en ny elev i databas med hjälp av JNDI and Naming Service
+"Sara", "Henriksson", "Yrgo", 1
+
+Här man testar checked exceptions.
+Om fel händer får man meddelande "Fel händer" och ny elever är inte tillagd i databas
+----------------------------------------------------------------
+EleverRestClient
+TestClient.java
+hantera elever som tidigare beskrivits med hjälp av REST (GET,POST,PUT,DELETE)
+		 
 
 
 

@@ -8,12 +8,12 @@
         <!-- Danijela -->
       
    <!-- gör som kommentar för att programmet köra default version dvs Production Verison
- 
+  
      <alternatives>
 	<class>com.yrgo.dataaccess.EleverDataAccessTestingVersion</class>
 	</alternatives>
-	
-      -->
+	-->
+     
 
        
 </beans>

@@ -39,17 +39,8 @@ public interface EleverManagementServiceLocal {
 		 * @return elev med id
 		 * @throws EleverNotFoundException kastar exception om elev inte finns
 		 */
-		public Elever getById(int id) throws EleverNotFoundException;
-		
-		/**
-		 * @author danijela
-		 * @param id elevs id
-		 * @param surname elevs efternamn
-		 * @param klass elevs år
-		 * @throws EleverNotFoundException  kastar exceptions om programmet kan inte  uppdatera info om elev
-		 */
-
-	
+		public Elever getById(int id) throws EleverNotFoundException;	
+				
 		/**
 		 * @author danijela
 		 * @param id elevs id
@@ -57,7 +48,13 @@ public interface EleverManagementServiceLocal {
 		 */
 		void deleteElever(int id) throws EleverNotFoundException;
 
-	
+		/**
+		 * @author danijela
+		 * @param id elevs id
+		 * @param surname elevs efternamn
+		 * @param klass elevs år
+		 * @throws EleverNotFoundException  kastar exceptions om programmet kan inte  uppdatera info om elev
+		 */
 		void updateElever(int id, String surname, int klass) throws EleverNotFoundException;
 	
 }
