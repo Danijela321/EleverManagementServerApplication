@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="lib/jboss-javaee-all-7.0-1.0.3.Final.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="com.yrgo.elevermanagement,com.yrgo.dataaccess,com.yrgo.domain,com.yrgo.rest" source="1.8" sourcepath="src" splitindex="true" use="true" version="true">
+            <link href="https://docs.oracle.com/javase/8/docs/api/"/>
+            <link href="http://docs.oracle.com/javase/8/javafx/api/"/>
+        </javadoc>
+    </target>
+</project>
